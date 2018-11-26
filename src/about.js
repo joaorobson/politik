@@ -8,7 +8,7 @@ import {
   Segment,
 } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
-import independece from './athens.jpg'
+import independece from './athens-min.jpg'
 
 
 const About = () => (
