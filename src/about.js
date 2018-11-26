@@ -12,7 +12,7 @@ import independece from './athens.jpg'
 
 
 const About = () => (
-  <div>
+  <div style={{overflow:'hidden'}}>
   <Image src={independece} style={{height:'70vh'}}/>
     <Segment vertical style={{ padding:'3em 0em', height:'30vh'}}>
       <Container>
