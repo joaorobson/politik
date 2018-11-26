@@ -2,14 +2,8 @@ import React from 'react'
 import {
   Button,
   Container,
-  Divider,
-  Dropdown,
-  Grid,
   Header,
   Image,
-  List,
-  Menu,
-  Segment,
 } from 'semantic-ui-react'
 import brasilia from './brasilia.jpg'
 import 'semantic-ui-css/semantic.min.css'
@@ -17,18 +11,18 @@ import 'semantic-ui-css/semantic.min.css'
 
 const FixedMenuLayout = () => (
   <div>
-  <Container text textAlign='center' style={{paddingTop:'30px',height:'140px'}}>
-    <Header style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'40px', color:'#666'}}as='h1'>Politik</Header>
-    <Header style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'16px', color:'#666'}}as='h2'>Data Science applied to politics</Header>
+  <Container text textAlign='center' style={{paddingTop:'20px',height:'20vh'}}>
+    <Header style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'40px', color:'#808080'}}as='h1'>Politik</Header>
+    <Header style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'16px', color:'#808080'}}as='h2'>Data Science applied to politics</Header>
   </Container>
     <div>
-    <Button.Group  fluid>
-      <Button style={{borderRadius:'0%',backgroundColor:'#f2f2f2'}}>Posts</Button>
+    <Button.Group  fluid style={{height:'5vh'}}>
+      <Button as='a' href='/about' style={{borderRadius:'0%'}}>About</Button>
       <Button>Projects</Button>
-      <Button style={{borderRadius:'0%',backgroundColor:'#f2f2f2'}}>About</Button>
+      <Button style={{borderRadius:'0%'}}>Posts</Button>
     </Button.Group>
   </div>
-      <Image src={brasilia}  style={{paddingTop:'0px'}} fluid />
+      <Image src={brasilia}  style={{height:'75vh',maxHeight:'100%',paddingTop:'0px'}} fluid />
 
   </div>
 )
