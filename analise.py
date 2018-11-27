@@ -22,7 +22,7 @@ def remove_accents(s):
 
 def read_file(f):
     text = f.read()
-    bla = [i for i in text.split() if i.lower() not in nao_substantivos and len(i) > 1]
+    bla = [unidecode.unidecode(i).lower() for i in text.split() if unidecode.unidecode(i.lower()) not in nao_substantivos and len(i) > 1]
     print(bla.count('R$'))
     text = ' '.join(bla)
     text = remove_accents(text)
