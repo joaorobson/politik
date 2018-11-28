@@ -1,41 +1,118 @@
-import ReactWordCloud from 'react-wordcloud';
-import React from 'react'
-import {Grid, Header} from 'semantic-ui-react'
+import React from "react";
+import WordCloud from "react-d3-cloud";
+import {Grid} from 'semantic-ui-react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./css/arrows.css";
 
-const amoedo= 
-[{'word': 'importante', 'value': 2}, {'word': 'm', 'value': 3}, {'word': 'desenvolver', 'value': 3}, {'word': 'posicao', 'value': 6}, {'word': 'patria', 'value': 2}, {'word': 'integracao', 'value': 2}, {'word': 'responsavel', 'value': 3}, {'word': 'pessoas', 'value': 8}, {'word': 'republica', 'value': 2}, {'word': 'funcione', 'value': 4}, {'word': 'eliminacao', 'value': 2}, {'word': 'projeto', 'value': 2}, {'word': 'servicos', 'value': 6}, {'word': 'universalizar', 'value': 2}, {'word': 'educacao', 'value': 16}, {'word': 'renda', 'value': 6}, {'word': 'indignacao', 'value': 3}, {'word': 'chile', 'value': 3}, {'word': 'fim', 'value': 10}, {'word': 'poder', 'value': 5}, {'word': 'maximo', 'value': 2}, {'word': 'somente', 'value': 2}, {'word': 'in', 'value': 2}, {'word': 'simples', 'value': 11}, {'word': 'novas', 'value': 2}, {'word': 'cidades', 'value': 3}, {'word': 'alto', 'value': 2}, {'word': 'politicas', 'value': 2}, {'word': 'ensino', 'value': 8}, {'word': 'criancas', 'value': 6}, {'word': 'segundo', 'value': 3}, {'word': 'recebem', 'value': 2}, {'word': 'adocao', 'value': 2}, {'word': 'partidos', 'value': 3}, {'word': 'abrir', 'value': 2}, {'word': 'ampliacao', 'value': 3}, {'word': 'estar', 'value': 4}, {'word': 'ano', 'value': 4}, {'word': 'pib', 'value': 4}, {'word': 'porem', 'value': 2}, {'word': 'ambiente', 'value': 4}, {'word': 'vezes', 'value': 3}, {'word': 'creches', 'value': 3}, {'word': 'economico', 'value': 3}, {'word': 'dinheiro', 'value': 5}, {'word': 'paises', 'value': 8}, {'word': 'comerciais', 'value': 3}, {'word': 'saneamento', 'value': 2}, {'word': 'mesma', 'value': 3}, {'word': 'rios', 'value': 2}, {'word': 'porque', 'value': 2}, {'word': 'sus', 'value': 2}, {'word': 'quadros', 'value': 2}, {'word': 'jovens', 'value': 6}, {'word': 'comercial', 'value': 2}, {'word': 'media', 'value': 3}, {'word': 'pode', 'value': 2}, {'word': 'maior', 'value': 5}, {'word': 'assim', 'value': 3}, {'word': 'policial', 'value': 3}, {'word': 'crescimento', 'value': 4}, {'word': 'principalmente', 'value': 3}, {'word': 'economica', 'value': 2}, {'word': 'tecnologia', 'value': 5}, {'word': 'estaduais', 'value': 2}, {'word': 'homicidios', 'value': 3}, {'word': 'burocracia', 'value': 6}, {'word': 'manter', 'value': 2}, {'word': 'unico', 'value': 4}, {'word': 'fechado', 'value': 2}, {'word': 'apenas', 'value': 4}, {'word': 'hoje', 'value': 2}, {'word': 'onde', 'value': 12}, {'word': 'sustentavel', 'value': 6}, {'word': 'publico', 'value': 8}, {'word': 'necessitam', 'value': 2}, {'word': 'piores', 'value': 3}, {'word': 'propiciar', 'value': 2}, {'word': 'precisa', 'value': 8}, {'word': 'abertura', 'value': 3}, {'word': 'acessivel', 'value': 2}, {'word': 'atendimento', 'value': 2}, {'word': 'avaliacao', 'value': 3}, {'word': 'propostas', 'value': 11}, {'word': 'geracao', 'value': 5}, {'word': 'proximas', 'value': 4}, {'word': 'acoes', 'value': 2}, {'word': 'posicoes', 'value': 2}, {'word': 'lutar', 'value': 2}, {'word': 'responsabilidade', 'value': 8}, {'word': 'cidadao', 'value': 10}, {'word': 'trabalhador', 'value': 4}, {'word': 'primeiros', 'value': 2}, {'word': 'presidencia', 'value': 2}, {'word': 'esgoto', 'value': 2}, {'word': 'pagos', 'value': 2}, {'word': 'custo', 'value': 3}, {'word': 'valor', 'value': 2}, {'word': 'independente', 'value': 3}, {'word': 'nacional', 'value': 2}, {'word': 'tudo', 'value': 2}, {'word': 'politico', 'value': 3}, {'word': 'proporcao', 'value': 2}, {'word': 'fazem', 'value': 2}, {'word': 'essencial', 'value': 2}, {'word': 'orcamento', 'value': 2}, {'word': 'contas', 'value': 3}, {'word': 'inaceitavel', 'value': 2}, {'word': 'quer', 'value': 2}, {'word': 'liberdade', 'value': 7}, {'word': 'parcerias', 'value': 4}, {'word': 'politicos', 'value': 8}, {'word': 'ambiental', 'value': 3}, {'word': 'negocios', 'value': 2}, {'word': 'comercio', 'value': 6}, {'word': 'recursos', 'value': 10}, {'word': 'desmatamento', 'value': 2}, {'word': 'preciso', 'value': 3}, {'word': 'acordos', 'value': 4}, {'word': 'empreendedor', 'value': 4}, {'word': 'metas', 'value': 3}, {'word': 'la', 'value': 6}, {'word': 'eliminar', 'value': 3}, {'word': 'habitantes', 'value': 2}, {'word': 'parte', 'value': 2}, {'word': 'hora', 'value': 2}, {'word': 'conviver', 'value': 2}, {'word': 'nao', 'value': 25}, {'word': 'quase', 'value': 2}, {'word': 'brasileira', 'value': 5}, {'word': 'acao', 'value': 5}, {'word': 'sociais', 'value': 2}, {'word': 'uso', 'value': 4}, {'word': 'empregos', 'value': 5}, {'word': 'basica', 'value': 5}, {'word': 'reducao', 'value': 11}, {'word': 'nir', 'value': 2}, {'word': 'pois', 'value': 2}, {'word': 'transformacao', 'value': 2}, {'word': 'assistencia', 'value': 2}, {'word': 'brasileiro', 'value': 14}, {'word': 'menor', 'value': 2}, {'word': 'demandas', 'value': 2}, {'word': 'ciente', 'value': 3}, {'word': 'melhor', 'value': 9}, {'word': 'conscientes', 'value': 2}, {'word': 'elevada', 'value': 2}, {'word': 'dignidade', 'value': 5}, {'word': 'maioria', 'value': 3}, {'word': 'prisao', 'value': 2}, {'word': 'integrado', 'value': 3}, {'word': 'funcionarios', 'value': 5}, {'word': 'brasileiros', 'value': 20}, {'word': 'crime', 'value': 2}, {'word': 'burocracias', 'value': 2}, {'word': 'expectativa', 'value': 3}, {'word': 'pobreza', 'value': 13}, {'word': 'nacionais', 'value': 2}, {'word': 'ser', 'value': 4}, {'word': 'base', 'value': 7}, {'word': 'aumentar', 'value': 3}, {'word': 'representatividade', 'value': 3}, {'word': 'permita', 'value': 2}, {'word': 'milhoes', 'value': 4}, {'word': 'publicas', 'value': 5}, {'word': 'pobre', 'value': 2}, {'word': 'dinamico', 'value': 2}, {'word': 'apesar', 'value': 3}, {'word': 'caminho', 'value': 5}, {'word': 'reforma', 'value': 2}, {'word': 'programa', 'value': 3}, {'word': 'negocio', 'value': 2}, {'word': 'investimento', 'value': 2}, {'word': 'futuras', 'value': 4}, {'word': 'consorcios', 'value': 3}, {'word': 'politica', 'value': 12}, {'word': 'sera', 'value': 2}, {'word': 'reduzir', 'value': 4}, {'word': 'ciencia', 'value': 4}, {'word': 'oportunidades', 'value': 7}, {'word': 'dia', 'value': 2}, {'word': 'mudar', 'value': 3}, {'word': 'cacao', 'value': 5}, {'word': 'anos', 'value': 9}, {'word': 'simpli', 'value': 4}, {'word': 'ter', 'value': 2}, {'word': 'us', 'value': 2}, {'word': 'estao', 'value': 2}, {'word': 'crescer', 'value': 3}, {'word': 'rico', 'value': 2}, {'word': 'previdencia', 'value': 6}, {'word': 'hospitais', 'value': 3}, {'word': 'nicao', 'value': 2}, {'word': 'representa', 'value': 2}, {'word': 'salvador', 'value': 2}, {'word': 'signi', 'value': 2}, {'word': 'privada', 'value': 2}, {'word': 'melhorar', 'value': 5}, {'word': 'sustentabilidade', 'value': 3}, {'word': 'carga', 'value': 4}, {'word': 'inserido', 'value': 2}, {'word': 'municipios', 'value': 3}, {'word': 'mundial', 'value': 7}, {'word': 'barreiras', 'value': 4}, {'word': 'corrupcao', 'value': 5}, {'word': 'energia', 'value': 2}, {'word': 'maiores', 'value': 3}, {'word': 'pagar', 'value': 2}, {'word': 'voto', 'value': 2}, {'word': 'trabalho', 'value': 4}, {'word': 'sao', 'value': 4}, {'word': 'problema', 'value': 2}, {'word': 'projetos', 'value': 2}, {'word': 'publica', 'value': 6}, {'word': 'gestao', 'value': 8}, {'word': 'atrapalha', 'value': 2}, {'word': 'ainda', 'value': 5}, {'word': 'desenvolvimento', 'value': 6}, {'word': 'plena', 'value': 3}, {'word': 'possam', 'value': 10}, {'word': 'revisao', 'value': 3}, {'word': 'recebe', 'value': 2}, {'word': 'criar', 'value': 5}, {'word': 'reais', 'value': 2}, {'word': 'extrema', 'value': 2}, {'word': 'sendo', 'value': 4}, {'word': 'di', 'value': 3}, {'word': 'direito', 'value': 2}, {'word': 'acesso', 'value': 4}, {'word': 'fundo', 'value': 2}, {'word': 'priorizacao', 'value': 2}, {'word': 'cerca', 'value': 2}, {'word': 'insustentavel', 'value': 2}, {'word': 'mortalidade', 'value': 3}, {'word': 'seguranca', 'value': 8}, {'word': 'bene', 'value': 2}, {'word': 'ranking', 'value': 4}, {'word': 'pobres', 'value': 2}, {'word': 'mundo', 'value': 13}, {'word': 'inteligente', 'value': 2}, {'word': 'digital', 'value': 4}, {'word': 'publicos', 'value': 9}, {'word': 'saida', 'value': 3}, {'word': 'independentes', 'value': 2}, {'word': 'proximos', 'value': 2}, {'word': 'todos', 'value': 20}, {'word': 'ssionais', 'value': 2}, {'word': 'regras', 'value': 2}, {'word': 'sempre', 'value': 6}, {'word': 'prestados', 'value': 2}, {'word': 'cidadaos', 'value': 7}, {'word': 'respeito', 'value': 2}, {'word': 'tirar', 'value': 2}, {'word': 'juridica', 'value': 2}, {'word': 'economias', 'value': 2}, {'word': 'menos', 'value': 12}, {'word': 'ssional', 'value': 2}, {'word': 'ilegal', 'value': 2}, {'word': 'justa', 'value': 3}, {'word': 'remocao', 'value': 2}, {'word': 'subsidios', 'value': 2}, {'word': 'municipais', 'value': 2}, {'word': 'principios', 'value': 3}, {'word': 'enquanto', 'value': 3}, {'word': 'estado', 'value': 18}, {'word': 'agronegocio', 'value': 3}, {'word': 'renovacao', 'value': 2}, {'word': 'campo', 'value': 2}, {'word': 'programas', 'value': 4}, {'word': 'setor', 'value': 9}, {'word': 'facilidade', 'value': 3}, {'word': 'digitais', 'value': 3}, {'word': 'eleitoral', 'value': 2}, {'word': 'vida', 'value': 14}, {'word': 'miseria', 'value': 2}, {'word': 'vez', 'value': 7}, {'word': 'pessoal', 'value': 2}, {'word': 'partido', 'value': 2}, {'word': 'congresso', 'value': 3}, {'word': 'territorio', 'value': 2}, {'word': 'conteudo', 'value': 2}, {'word': 'desa', 'value': 2}, {'word': 'empreender', 'value': 6}, {'word': 'mil', 'value': 7}, {'word': 'orgaos', 'value': 2}, {'word': 'tributaria', 'value': 3}, {'word': 'conhecimento', 'value': 2}, {'word': 'familia', 'value': 6}, {'word': 'construcao', 'value': 4}, {'word': 'patrimonio', 'value': 2}, {'word': 'governos', 'value': 2}, {'word': 'momento', 'value': 2}, {'word': 'infantil', 'value': 5}, {'word': 'deve', 'value': 3}, {'word': 'bilhoes', 'value': 2}, {'word': 'criacao', 'value': 5}, {'word': 'transparencia', 'value': 5}, {'word': 'privado', 'value': 5}, {'word': 'sistema', 'value': 4}, {'word': 'candidato', 'value': 2}, {'word': 'federal', 'value': 2}, {'word': 'entender', 'value': 3}, {'word': 'novo', 'value': 11}, {'word': 'direcao', 'value': 2}, {'word': 'con', 'value': 2}, {'word': 'precisam', 'value': 2}, {'word': 'violencia', 'value': 3}, {'word': 'todas', 'value': 4}, {'word': 'todo', 'value': 9}, {'word': 'grande', 'value': 5}, {'word': 'alunos', 'value': 3}, {'word': 'processo', 'value': 3}, {'word': 'vivendo', 'value': 2}, {'word': 'visao', 'value': 12}, {'word': 'exterior', 'value': 2}, {'word': 'criminalidade', 'value': 2}, {'word': 'pais', 'value': 26}, {'word': 'taxa', 'value': 2}, {'word': 'potencial', 'value': 2}, {'word': 'cado', 'value': 2}, {'word': 'nascidos', 'value': 2}, {'word': 'pacientes', 'value': 2}, {'word': 'meio', 'value': 3}, {'word': 'estados', 'value': 2}, {'word': 'vira', 'value': 2}, {'word': 'chegar', 'value': 6}, {'word': 'campeoes', 'value': 2}, {'word': 'beneficios', 'value': 5}, {'word': 'cadastro', 'value': 2}, {'word': 'biodiversidade', 'value': 2}, {'word': 'trate', 'value': 2}, {'word': 'resultado', 'value': 4}, {'word': 'qualidade', 'value': 12}, {'word': 'trabalhar', 'value': 9}, {'word': 'futuro', 'value': 3}, {'word': 'governo', 'value': 11}, {'word': 'fazer', 'value': 8}, {'word': 'terco', 'value': 2}, {'word': 'empresas', 'value': 2}, {'word': 'distribuicao', 'value': 3}, {'word': 'r', 'value': 5}, {'word': 'social', 'value': 6}, {'word': 'brasil', 'value': 39}, {'word': 'gente', 'value': 2}, {'word': 'impostos', 'value': 8}, {'word': 'oportunidade', 'value': 3}, {'word': 'escolha', 'value': 2}, {'word': 'certo', 'value': 2}, {'word': 'pro', 'value': 6}, {'word': 'via', 'value': 2}, {'word': 'prazo', 'value': 11}, {'word': 'injusta', 'value': 2}, {'word': 'valores', 'value': 3}, {'word': 'local', 'value': 2}, {'word': 'moderno', 'value': 3}, {'word': 'bolsa', 'value': 3}, {'word': 'combate', 'value': 4}, {'word': 'grandes', 'value': 2}, {'word': 'precisamos', 'value': 5}, {'word': 'plano', 'value': 2}, {'word': 'mudanca', 'value': 3}, {'word': 'modelo', 'value': 4}, {'word': 'vamos', 'value': 18}, {'word': 'zeram', 'value': 2}, {'word': 'quanto', 'value': 2}, {'word': 'relacao', 'value': 4}, {'word': 'populacao', 'value': 5}, {'word': 'retorno', 'value': 2}, {'word': 'legislativo', 'value': 2}, {'word': 'definitiva', 'value': 2}, {'word': 'forma', 'value': 4}, {'word': 'mercado', 'value': 7}, {'word': 'privatizacoes', 'value': 2}, {'word': 'viver', 'value': 4}, {'word': 'feito', 'value': 2}, {'word': 'indice', 'value': 3}, {'word': 'iguais', 'value': 2}, {'word': 'aposentadoria', 'value': 2}, {'word': 'internacional', 'value': 2}, {'word': 'seguro', 'value': 7}, {'word': 'saude', 'value': 9}, {'word': 'cada', 'value': 13}, {'word': 'queremos', 'value': 17}, {'word': 'construir', 'value': 6}, {'word': 'cidadania', 'value': 3}, {'word': 'sucesso', 'value': 2}, {'word': 'naturais', 'value': 2}, {'word': 'livre', 'value': 13}, {'word': 'etica', 'value': 2}, {'word': 'medio', 'value': 2}, {'word': 'sociedade', 'value': 8}, {'word': 'desempregados', 'value': 2}, {'word': 'indutor', 'value': 2}, {'word': 'propriedade', 'value': 2}, {'word': 'prevencao', 'value': 3}, {'word': 'longo', 'value': 11}, {'word': 'executivo', 'value': 2}, {'word': 'geracoes', 'value': 8}, {'word': 'elevado', 'value': 2}, {'word': 'prospera', 'value': 3}, {'word': 'car', 'value': 2}, {'word': 'especiais', 'value': 2}, {'word': 'banco', 'value': 4}, {'word': 'auxilios', 'value': 2}, {'word': 'impunidade', 'value': 4}, {'word': 'ajudar', 'value': 3}, {'word': 'baixo', 'value': 2}, {'word': 'empreendedorismo', 'value': 4}, {'word': 'dar', 'value': 2}, {'word': 'foco', 'value': 3}, {'word': 'protecao', 'value': 5}, {'word': 'parceria', 'value': 2}, {'word': 'rapidamente', 'value': 2}, {'word': 'economia', 'value': 5}, {'word': 'prioridades', 'value': 2}, {'word': 'numero', 'value': 2}, {'word': 'vivos', 'value': 2}, {'word': 'privilegios', 'value': 9}, {'word': 'formacao', 'value': 2}, {'word': 'demais', 'value': 2}, {'word': 'nivel', 'value': 2}, {'word': 'renovar', 'value': 2}, {'word': 'especialmente', 'value': 2}, {'word': 'aplicacao', 'value': 2}, {'word': 'gastase', 'value': 2}, {'word': 'termos', 'value': 2}, {'word': 'pisa', 'value': 2}, {'word': 'expansao', 'value': 2}, {'word': 'aposentado', 'value': 2}, {'word': 'lei', 'value': 2}, {'word': 'deputados', 'value': 2}, {'word': 'aluno', 'value': 2}, {'word': 'atraves', 'value': 2}, {'word': 'escolas', 'value': 4}, {'word': 'leis', 'value': 5}]
 
-const alc = [{'value': 2, 'word': 'execucao'}, {'value': 2, 'word': 'desenvolver'}, {'value': 2, 'word': 'integracao'}, {'value': 3, 'word': 'servicos'}, {'value': 6, 'word': 'educacao'}, {'value': 3, 'word': 'indignacao'}, {'value': 2, 'word': 'turismo'}, {'value': 4, 'word': 'politicas'}, {'value': 2, 'word': 'ensino'}, {'value': 3, 'word': 'criancas'}, {'value': 2, 'word': 'america'}, {'value': 3, 'word': 'jovens'}, {'value': 2, 'word': 'idoso'}, {'value': 4, 'word': 'areas'}, {'value': 2, 'word': 'homicidios'}, {'value': 3, 'word': 'unico'}, {'value': 2, 'word': 'onde'}, {'value': 3, 'word': 'sustentavel'}, {'value': 4, 'word': 'precisa'}, {'value': 2, 'word': 'atendimento'}, {'value': 2, 'word': 'eficiencia'}, {'value': 3, 'word': 'avaliacao'}, {'value': 2, 'word': 'cidadao'}, {'value': 2, 'word': 'valor'}, {'value': 3, 'word': 'nacional'}, {'value': 2, 'word': 'investimento'}, {'value': 3, 'word': 'pag'}, {'value': 2, 'word': 'plenamente'}, {'value': 2, 'word': 'atencao'}, {'value': 2, 'word': 'apoio'}, {'value': 3, 'word': 'promover'}, {'value': 2, 'word': 'eliminar'}, {'value': 3, 'word': 'cultura'}, {'value': 2, 'word': 'nao'}, {'value': 3, 'word': 'brasileira'}, {'value': 3, 'word': 'industria'}, {'value': 4, 'word': 'sociais'}, {'value': 2, 'word': 'aumento'}, {'value': 2, 'word': 'reducao'}, {'value': 2, 'word': 'basica'}, {'value': 3, 'word': 'brasileiros'}, {'value': 3, 'word': 'igualdade'}, {'value': 4, 'word': 'especial'}, {'value': 2, 'word': 'publicas'}, {'value': 2, 'word': 'desigualdades'}, {'value': 2, 'word': 'reforma'}, {'value': 5, 'word': 'programa'}, {'value': 2, 'word': 'criativa'}, {'value': 3, 'word': 'politica'}, {'value': 4, 'word': 'reduzir'}, {'value': 3, 'word': 'oportunidades'}, {'value': 3, 'word': 'anos'}, {'value': 5, 'word': 'crescer'}, {'value': 2, 'word': 'vai'}, {'value': 2, 'word': 'idosos'}, {'value': 2, 'word': 'melhorar'}, {'value': 2, 'word': 'municipios'}, {'value': 3, 'word': 'corrupcao'}, {'value': 2, 'word': 'ampliar'}, {'value': 3, 'word': 'solidariedade'}, {'value': 3, 'word': 'sao'}, {'value': 4, 'word': 'desenvolvimento'}, {'value': 2, 'word': 'possam'}, {'value': 6, 'word': 'criar'}, {'value': 2, 'word': 'acesso'}, {'value': 2, 'word': 'mulheres'}, {'value': 3, 'word': 'seguranca'}, {'value': 4, 'word': 'publicos'}, {'value': 3, 'word': 'todos'}, {'value': 3, 'word': 'regras'}, {'value': 2, 'word': 'juridica'}, {'value': 2, 'word': 'trafico'}, {'value': 3, 'word': 'menos'}, {'value': 5, 'word': 'combater'}, {'value': 5, 'word': 'estado'}, {'value': 3, 'word': 'competitividade'}, {'value': 3, 'word': 'programas'}, {'value': 2, 'word': 'direitos'}, {'value': 2, 'word': 'organizado'}, {'value': 2, 'word': 'garantir'}, {'value': 2, 'word': 'prioridade'}, {'value': 2, 'word': 'estabelecer'}, {'value': 2, 'word': 'empreender'}, {'value': 3, 'word': 'voltar'}, {'value': 2, 'word': 'cumprimento'}, {'value': 2, 'word': 'conhecimento'}, {'value': 2, 'word': 'familia'}, {'value': 2, 'word': 'criacao'}, {'value': 2, 'word': 'promoveremos'}, {'value': 2, 'word': 'sistema'}, {'value': 3, 'word': 'violencia'}, {'value': 3, 'word': 'todas'}, {'value': 2, 'word': 'tornar'}, {'value': 2, 'word': 'exterior'}, {'value': 5, 'word': 'pais'}, {'value': 3, 'word': 'meio'}, {'value': 2, 'word': 'estados'}, {'value': 2, 'word': 'mecanismos'}, {'value': 2, 'word': 'serio'}, {'value': 7, 'word': 'qualidade'}, {'value': 2, 'word': 'futuro'}, {'value': 3, 'word': 'governo'}, {'value': 2, 'word': 'empresas'}, {'value': 21, 'word': 'brasil'}, {'value': 3, 'word': 'impostos'}, {'value': 2, 'word': 'plano'}, {'value': 3, 'word': 'esperanca'}, {'value': 11, 'word': 'vamos'}, {'value': 3, 'word': 'crime'}, {'value': 2, 'word': 'transformar'}, {'value': 4, 'word': 'saude'}, {'value': 2, 'word': 'ineficiente'}, {'value': 2, 'word': 'vital'}, {'value': 2, 'word': 'baixa'}, {'value': 2, 'word': 'prevencao'}, {'value': 2, 'word': 'agricola'}, {'value': 4, 'word': 'dar'}, {'value': 8, 'word': 'economia'}, {'value': 3, 'word': 'numero'}, {'value': 3, 'word': 'privilegios'}, {'value': 2, 'word': 'agricultura'}, {'value': 2, 'word': 'lei'}]
-
-
-const WORD_COUNT_KEY = 'value';
-const WORD_KEY = 'word';
-
-const MyWordCloud = () => {
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  console.log(style)
   return (
-      <Grid>
-      <Grid.Row columns={2}>
-    <Grid.Column style={{ height: 400}}>
-    <Header textAlign='center' style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'40px', color:'#808080'}}as='h1'>Amoêdo</Header>
+    <div
+      className={className}
 
-      <ReactWordCloud
-	words={amoedo}
-	wordCountKey={WORD_COUNT_KEY}
-	wordKey={WORD_KEY}
-      />
-    </Grid.Column>
-    <Grid.Column style={{height: 400}}>
-    <Header textAlign='center' style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'40px', color:'#808080'}}as='h1'>Alckmin</Header>
-
-      <ReactWordCloud
-	words={alc}
-	wordCountKey={WORD_COUNT_KEY}
-	wordKey={WORD_KEY}
-      />
-    </Grid.Column>
-    </Grid.Row>
-    </Grid>
+      style={{ ...style, display: "block"}}
+      onClick={onClick}
+    />
   );
-};
+}
 
+class MyWordCloud extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: []
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://0.0.0.0:5000/")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  } 
+  mountClouds() {
+    const fontSizeMapper = text => Math.log2(text.value) * 15;
+        var settings = {
+      dots: true,
+      speed: 500,
+      slidesToShow: 2,
+          arrows:true,
+          className: "slides",
+
+      slidesToScroll: 1
+    };
+    const clouds = this.state.items.map(words => (
+      <div><h1>amoedo</h1>
+       <WordCloud 
+        width={400} 
+        height={400} 
+        padding={2} 
+        data={words} 
+        fontSizeMapper={fontSizeMapper} 
+        style={{margin: '0 auto', position:'relative'}}
+        /></div>
+    ))
+    return(
+      <Slider {...settings}>
+        <div>
+      {clouds[0]}
+        </div>
+        <div>
+      {clouds[1]}
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+        <div>
+          <h3>4</h3>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+      </Slider>
+    )
+  }
+  /*
+      <Grid >
+        <Grid.Row  columns={2}>
+      {clouds.slice(0,2) }
+        </Grid.Row>
+        <Grid.Row columns={2}>
+      { clouds.slice(2,4)} 
+        </Grid.Row>
+      </Grid>
+      */
+  render() {
+    console.log(this.state.items)
+    if(this.state.isLoaded) {
+    return (
+      <div style={{paddingLeft:'20%', paddingRight:'20%'}}>{this.mountClouds()}</div>
+    )
+    }else{return (<div></div>)}
+  }
+}
 export default MyWordCloud;
