@@ -5,7 +5,7 @@ import {
   Header,
   Image,
 } from 'semantic-ui-react'
-import brasilia from './brasilia.jpg'
+import brasilia from './brasilia-min.jpg'
 import 'semantic-ui-css/semantic.min.css'
 
 
