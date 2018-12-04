@@ -2,29 +2,61 @@ import React from 'react'
 import {
   Button,
   Container,
+  Grid,
   Header,
+  List,
   Image,
 } from 'semantic-ui-react'
 import brasilia from './brasilia-min.jpg'
 import 'semantic-ui-css/semantic.min.css'
+import './css/caption.css'
 
 
 const FixedMenuLayout = () => (
-  <div>
-  <Container text textAlign='center' style={{paddingTop:'20px',height:'20vh'}}>
-    <Header style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'40px', color:'#808080'}}as='h1'>Politik</Header>
-    <Header style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'16px', color:'#808080'}}as='h2'>Data Science applied to politics</Header>
-  </Container>
-    <div>
-    <Button.Group  fluid style={{height:'5vh'}}>
-      <Button as='a' href='/about' style={{borderRadius:'0%'}}>About</Button>
-      <Button>Projects</Button>
-      <Button style={{borderRadius:'0%'}}>Posts</Button>
-    </Button.Group>
-  </div>
-      <Image src={brasilia}  style={{height:'75vh',maxHeight:'100%',paddingTop:'0px'}} fluid />
+  <Grid>
+    <Grid.Row verticalAlign='middle'>
+      <Grid.Column width={4}>
+   <Header style={{paddingLeft:'10%',fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'28px', color:'#b3b3b3'}}as='h1'as='h2'>
+    <Header.Content>
+      Politik
+      <Header.Subheader style={{fontSize: '14px'}}>Data Science applied to politics</Header.Subheader>
+    </Header.Content>
+  </Header>
+    <List link relaxed style={{paddingTop:'30%'}}>
+                <List.Item
+                  style={{paddingLeft:'10%', fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'16px'}}
+                  as='a'
+                  href='/'
+                >
+                  Projects 
+                </List.Item>
+                <List.Item
+                  style={{paddingLeft:'10%', fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'16px'}}
+                  as='a'
+                  href='/'
+                >
+                  Bio 
+                </List.Item>
+                <List.Item
+                  style={{paddingLeft:'10%', fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'300', fontSize:'16px'}}
+                  as='a'
+                  href='/about'
+                >
+                  About 
+                </List.Item>
+              </List>
 
+      </Grid.Column>
+      <Grid.Column className="container" textAlign='center' verticalAlign='middle' width={12}>
+        <Image src={brasilia} verticalAlign='middle'  style={{ width:'90%', height:'90%',maxHeight:'100%', paddingTop:'10%'}} fluid />
+    <div class="overlay">
+    < h1 style={{color: '#808080'}}>Hello World</h1>
   </div>
+      </Grid.Column>
+    </Grid.Row>
+  
+
+  </Grid>
 )
 
 export default FixedMenuLayout

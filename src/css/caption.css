@@ -1,0 +1,15 @@
+.overlay {
+  height: 10%;
+  width: 90%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: yellow;
+  font-color: yellow;
+  text-align: center;
+  margin: 0px 5%;
+}
+
+
+.container:hover .overlay {
+  opacity: 0.5;
+}

@@ -1,10 +1,12 @@
 import React from "react";
 import WordCloud from "react-d3-cloud";
-import {Grid} from 'semantic-ui-react';
+import {Grid, Header} from 'semantic-ui-react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./css/arrows.css";
+
+const CANDIDATES = ['Amoêdo', 'Alckmin', 'Bolsonaro', 'Ciro', 'Haddad']
 
 
 function SampleNextArrow(props) {
@@ -52,27 +54,34 @@ class MyWordCloud extends React.Component {
       )
   } 
   mountClouds() {
-    const fontSizeMapper = text => Math.log2(text.value) * 15;
+    const fontSizeMapper = (text, idx) => text.l;
         var settings = {
       dots: true,
       speed: 500,
-      slidesToShow: 2,
+          autoplaySpeed:7000,
+      slidesToShow: 1,
           arrows:true,
+          autoplay:true,
           className: "slides",
 
       slidesToScroll: 1
     };
-    const clouds = this.state.items.map(words => (
-      <div><h1>amoedo</h1>
+    const clouds = this.state.items.map((words, id) => (
+        <div style={{textAlign:'center'}}><Header textAlign='center' style={{fontFamily : 'Lato', letterSpacing:'5px',fontWeight:'700', fontSize:'40px', color:'#808080'}} as='h1'>
+      {CANDIDATES[id]}
+      </Header>
+
        <WordCloud 
-        width={400} 
-        height={400} 
-        padding={2} 
+        width={500} 
+        height={500} 
+        padding={3} 
         data={words} 
         fontSizeMapper={fontSizeMapper} 
         style={{margin: '0 auto', position:'relative'}}
         /></div>
     ))
+    console.log(this.state.items)
+    console.log(clouds)
     return(
       <Slider {...settings}>
         <div>
@@ -82,16 +91,13 @@ class MyWordCloud extends React.Component {
       {clouds[1]}
         </div>
         <div>
-          <h3>3</h3>
+      {clouds[2]}
         </div>
         <div>
-          <h3>4</h3>
+      {clouds[3]}
         </div>
         <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
+      {clouds[4]}
         </div>
       </Slider>
     )
