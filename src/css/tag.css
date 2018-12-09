@@ -1,0 +1,12 @@
+    .tag {
+         width: 70%;
+  height: 70%;
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  margin-left: -50px;
+       z-index: 1000;
+       background-color: white; 
+       padding: 5px 10px;
+       color: #FFFFFF;
+    }

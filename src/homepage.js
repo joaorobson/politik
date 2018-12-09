@@ -50,7 +50,14 @@ const FixedMenuLayout = () => (
       <Grid.Column className="container" textAlign='center' verticalAlign='middle' width={12}>
         <Image src={brasilia} verticalAlign='middle'  style={{ width:'90%', height:'90%',maxHeight:'100%', paddingTop:'10%'}} fluid />
     <div class="overlay">
-    < h1 style={{color: '#808080'}}>Hello World</h1>
+    <Header as='h4' textAlign='left' style={{fontWeight: 200, color: '#4d4d4d'}}>
+      Congresso Nacional (National Congress), Brazil. By&nbsp;  
+      <a href="https://www.flickr.com/photos/anavolpe">
+        Ana Volpe&nbsp;
+      </a>used under&nbsp;
+
+  <a rel="nofollow"  href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>
+    </Header>
   </div>
       </Grid.Column>
     </Grid.Row>
