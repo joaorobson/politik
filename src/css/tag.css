@@ -5,8 +5,12 @@
   left: 20%;
   top: 15%;
   margin-left: -50px;
-       z-index: 1000;
+       z-index: 100;
        background-color: white; 
        padding: 5px 10px;
        color: #FFFFFF;
     }
+
+.loader {
+  z-index: 1000;
+}
