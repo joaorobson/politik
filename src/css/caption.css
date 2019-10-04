@@ -1,0 +1,28 @@
+.overlay {
+  height: 10%;
+  width: 90%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  margin: 1% 5%;
+}
+
+.aboutoverlay {
+  height: 5%;
+  width: 90%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  margin: 1% 10%;
+
+
+
+}
+
+
+.container:hover .overlay {
+  opacity: 0.5;
+}
+.container:hover .aboutoverlay {
+  opacity: 0.5;
+}
