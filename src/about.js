@@ -1,20 +1,16 @@
 import React from "react";
 import {
-  Container,
-  Divider,
   Dimmer,
   Loader,
   Grid,
   Header,
   Image,
   List,
-  Segment
 } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import border from "./h9.jpg";
 import "./css/tag.css";
 import "./css/caption.css";
-import LazyLoad from "react-lazyload";
 
 class About extends React.Component {
   constructor() {

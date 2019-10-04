@@ -1,6 +1,6 @@
 import React from "react";
 import WordCloud from "react-d3-cloud";
-import {Grid, Header} from 'semantic-ui-react';
+import {Header} from 'semantic-ui-react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,18 +9,6 @@ import "./css/arrows.css";
 const CANDIDATES = ['Amoêdo', 'Alckmin', 'Bolsonaro', 'Ciro', 'Haddad']
 
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  console.log(style)
-  return (
-    <div
-      className={className}
-
-      style={{ ...style, display: "block"}}
-      onClick={onClick}
-    />
-  );
-}
 
 class MyWordCloud extends React.Component {
   constructor(props) {

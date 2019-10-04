@@ -1,6 +1,5 @@
 import React from 'react';
 import {Radar} from 'react-chartjs-2';
-import {Header} from 'semantic-ui-react';
 
 const data = {
   labels: ["brasil", "economia", "criar", "combater", "desenvolvimento", "pais", "queremos", "brasileiros", "educacao", "governo", "paises", "politica", "nacional", "criacao", "empresas"],

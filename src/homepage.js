@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  Button,
-  Container,
   Grid,
   Header,
   List,
@@ -25,7 +23,6 @@ const FixedMenuLayout = () => (
             color: "#b3b3b3"
           }}
           as="h1"
-          as="h2"
         >
           <Header.Content>
             Politik
@@ -57,7 +54,7 @@ const FixedMenuLayout = () => (
               fontSize: "16px"
             }}
             as="a"
-            href="/"
+            href="/bio"
           >
             Bio
           </List.Item>

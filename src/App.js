@@ -5,6 +5,7 @@ import About from './about'
 import MyWordCloud from './wordcloud'
 import Chart from './correlation'
 import Projects from './projects'
+import Bio from './bio'
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-129776879-1');
@@ -22,6 +23,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={HomepageLayout} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/bio" component={Bio} />
           <Route exact path="/wordcloud" component={MyWordCloud} />
           <Route exact path="/chart" component={Chart} />
           <Route exact path="/projects" component={Projects} />
