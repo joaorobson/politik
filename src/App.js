@@ -21,6 +21,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,900" rel="stylesheet" />
           <Route exact path="/" component={HomepageLayout} />
           <Route exact path="/about" component={About} />
           <Route exact path="/bio" component={Bio} />

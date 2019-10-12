@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Dimmer,
-  Loader,
   Grid,
   Header,
   Image,
@@ -11,6 +10,16 @@ import "semantic-ui-css/semantic.min.css";
 import border from "./h9.jpg";
 import "./css/tag.css";
 import "./css/caption.css";
+import { css } from '@emotion/core';
+import { GridLoader } from 'react-spinners';
+
+
+const override = css`
+    display: block;
+    margin: 10px;
+    border-color: #808080;
+`;
+
 
 class About extends React.Component {
   constructor() {
@@ -24,10 +33,18 @@ class About extends React.Component {
         <Dimmer
           active={!aboutIsLoaded}
           inverted
-          style={{backgroundColor: '#f2f2f2'}}
+          style={{backgroundColor: 'white'}}
         >
-          <Loader  style={{borderColor:'black'}} inverted size="massive" />
-        </Dimmer>
+        <GridLoader
+          css={override}
+          sizeUnit={"px"}
+          size={20}
+          margin={"50px"}
+          color={'#808080'}
+          loading={!this.state.bioIsLoaded}
+        />
+      </Dimmer>
+
         <div style={{ overflow: "hidden" }}>
           <div className="tag" textAlign="center">
             <Grid
