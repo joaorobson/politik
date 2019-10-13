@@ -154,7 +154,7 @@ class Bio extends React.Component {
               fontSize: "20px"
             }}
             as="a"
-            href="/"
+            href="/about"
           >
             About
           </List.Item>
@@ -166,7 +166,7 @@ class Bio extends React.Component {
               fontSize: "20px"
             }}
             as="a"
-            href="/about"
+            href="/"
           >
             Projects
           </List.Item>
