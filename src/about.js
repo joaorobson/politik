@@ -39,7 +39,7 @@ class About extends React.Component {
           css={override}
           sizeUnit={"px"}
           size={20}
-          margin={"50px"}
+          margin={"100px"}
           color={'#808080'}
           loading={!this.state.bioIsLoaded}
         />
