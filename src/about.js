@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Dimmer,
-  Loader,
   Grid,
   Header,
   Image,
@@ -11,6 +10,16 @@ import "semantic-ui-css/semantic.min.css";
 import border from "./h9.jpg";
 import "./css/tag.css";
 import "./css/caption.css";
+import { css } from '@emotion/core';
+import { GridLoader } from 'react-spinners';
+
+
+const override = css`
+    display: block;
+    margin: 10px;
+    border-color: #808080;
+`;
+
 
 class About extends React.Component {
   constructor() {
@@ -24,10 +33,18 @@ class About extends React.Component {
         <Dimmer
           active={!aboutIsLoaded}
           inverted
-          style={{backgroundColor: '#f2f2f2'}}
+          style={{backgroundColor: 'white'}}
         >
-          <Loader  style={{borderColor:'black'}} inverted size="massive" />
-        </Dimmer>
+        <GridLoader
+          css={override}
+          sizeUnit={"px"}
+          size={20}
+          margin={"100px"}
+          color={'#808080'}
+          loading={!this.state.bioIsLoaded}
+        />
+      </Dimmer>
+
         <div style={{ overflow: "hidden" }}>
           <div className="tag" textAlign="center">
             <Grid
@@ -119,10 +136,10 @@ class About extends React.Component {
                         color: "#808080"
                       }}
                     >
-                      Politik also gives the name of an awesome <a href="https://genius.com/Coldplay-politik-lyrics">song</a>.
+                      The name is also inspired by the name of an awesome <a href="https://genius.com/Coldplay-politik-lyrics">song</a>.
                     </font>
                   </p>
-                  <hr style={{ width: "50%" }} />
+                  <hr style={{ backgroundColor: '#d9d9d9', height: '1px', border: 'none', width: "30%" }} />
 
                   <List link relaxed style={{ paddingTop: "1%" }}>
                     <List.Item
@@ -157,9 +174,9 @@ class About extends React.Component {
                         fontSize: "20px"
                       }}
                       as="a"
-                      href="/"
+                      href="/bio"
                     >
-                      Posts
+                      Bio
                     </List.Item>
                   </List>
                 </Grid.Column>
@@ -191,7 +208,7 @@ class About extends React.Component {
                 textAlign="left"
                 style={{ fontWeight: 200, color: "#4d4d4d" }}
               >
-                Holocaust-Mahnmal (Holocaust Memorial), Germany. By&nbsp;
+                Holocaust-Mahnmal (Holocaust Memorial), Berlin, Germany. By&nbsp;
                 <a href="https://www.flickr.com/photos/wolfgangstaudt/">
                   Wolfgang Staudt&nbsp;
                 </a>

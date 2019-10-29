@@ -96,7 +96,7 @@ const FixedMenuLayout = () => (
             textAlign="left"
             style={{ fontWeight: 200, color: "#4d4d4d" }}
           >
-            Congresso Nacional (National Congress), Brazil. By&nbsp;
+            Congresso Nacional (National Congress), Brasília, Brazil. By&nbsp;
             <a href="https://www.flickr.com/photos/anavolpe">Ana Volpe&nbsp;</a>
             used under&nbsp;
             <a

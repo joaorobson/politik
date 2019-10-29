@@ -6,6 +6,7 @@ import MyWordCloud from './wordcloud'
 import Chart from './correlation'
 import Projects from './projects'
 import Bio from './bio'
+import chart from './projects/brazil_2018_gov_proposals'
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-129776879-1');
@@ -21,11 +22,14 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,900" rel="stylesheet" />
+          <script src="https://d3js.org/d3.v4.js"></script>
+
           <Route exact path="/" component={HomepageLayout} />
+          <Route exact path="/chart" component={chart} />
           <Route exact path="/about" component={About} />
           <Route exact path="/bio" component={Bio} />
           <Route exact path="/wordcloud" component={MyWordCloud} />
-          <Route exact path="/chart" component={Chart} />
           <Route exact path="/projects" component={Projects} />
         </div>
       </Router>
