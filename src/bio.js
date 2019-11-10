@@ -37,7 +37,7 @@ class Bio extends React.Component {
           loading={!this.state.bioIsLoaded}
         />
 			</Dimmer>
-				<div className="container" style={{zIndex:10}}>
+				<div className="aboutcontainer" style={{zIndex:10}}>
         <Image
               hidden={!imageIsLoaded}
               onLoad={() => {
