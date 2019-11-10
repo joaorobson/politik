@@ -90,7 +90,7 @@ const FixedMenuLayout = () => (
           }}
           fluid
         />
-        <div class="overlay">
+        <div className="homeoverlay">
           <Header
             as="h4"
             textAlign="left"

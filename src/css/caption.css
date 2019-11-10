@@ -1,4 +1,4 @@
-.overlay {
+.homeoverlay {
   height: 10%;
   width: 90%;
   opacity: 0;
@@ -17,9 +17,9 @@
 }
 
 
-.container:hover .overlay {
+.container:hover .homeoverlay {
   opacity: 0.5;
 }
-.container:hover .aboutoverlay {
+.aboutcontainer:hover .aboutoverlay {
   opacity: 0.5;
 }

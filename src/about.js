@@ -183,7 +183,7 @@ class About extends React.Component {
               </Grid.Row>
             </Grid>
           </div>
-          <div className="container">
+          <div className="aboutcontainer">
             <Image
               hidden={!imageIsLoaded}
               onLoad={() => {
