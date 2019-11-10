@@ -162,7 +162,7 @@ class About extends React.Component {
                         fontSize: "20px"
                       }}
                       as="a"
-                      href="/"
+                      href="/projects"
                     >
                       Projects
                     </List.Item>

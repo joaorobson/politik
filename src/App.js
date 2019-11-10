@@ -3,7 +3,6 @@ import './App.css';
 import HomepageLayout from './homepage'
 import About from './about'
 import MyWordCloud from './wordcloud'
-import Chart from './correlation'
 import Projects from './projects'
 import Bio from './bio'
 import chart from './projects/brazil_2018_gov_proposals'
@@ -26,7 +25,7 @@ class App extends Component {
           <script src="https://d3js.org/d3.v4.js"></script>
 
           <Route exact path="/" component={HomepageLayout} />
-          <Route exact path="/chart" component={chart} />
+          <Route exact path="/project_1" component={chart} />
           <Route exact path="/about" component={About} />
           <Route exact path="/bio" component={Bio} />
           <Route exact path="/wordcloud" component={MyWordCloud} />

@@ -20,7 +20,6 @@ class BarChart extends React.Component {
       .attr("height", height);
 
     // Read data
-    var p = [];
     d3.csv(
       "https://raw.githubusercontent.com/joaorobson/politik/devel/projects/poverty_headcount/poverty_headcount.csv",
       function(data) {
@@ -36,7 +35,7 @@ class BarChart extends React.Component {
       var color = d3
         .scaleOrdinal()
         .domain(["Asia", "Europe", "Africa", "Oceania", "Americas"])
-        .range(d3.schemeSet1);
+        .range(d3.schemeSet2);
 
       // Size scale for countries
 
@@ -67,13 +66,17 @@ class BarChart extends React.Component {
             " inhabitants<br>" +
             d.most_recent_value_pov +
             " % of population (" +
-            parseInt(
+            formatNumber(parseInt(
               (d.most_recent_value_pov * d.most_recent_value_pop) / 100
-            ) +
-            ") living with less than $1.9 per day"
+            )) +
+            " people) living with less than $1.9 per day" +
+            "<br>" +
+            "(" + parseInt(d.most_recent_year_pov) + ")"
         )
           .style("left", d3.select(this).attr("cx") + "px")
-          .style("top", d3.select(this).attr("cy") + "px");
+          .style("top", d3.select(this).attr("cy") + "px")
+          .style("color", "#737373")
+          .style("border", "none");
       };
       var mouseleave = function(d) {
         Tooltip.style("opacity", 0);
@@ -149,9 +152,9 @@ class BarChart extends React.Component {
           "collide",
           d3
             .forceCollide()
-            .strength(0.7)
+            .strength(0.5)
             .radius(function(d) {
-              return 1.5 * d.most_recent_value_pov;
+              return 1.1 * d.most_recent_value_pov;
             })
             .iterations(1)
         );
@@ -192,7 +195,6 @@ class BarChart extends React.Component {
             current_scale_string.length - 1
           );
         }
-        console.log("c", current_scale);
         d.fx = sx + (d3.event.x - sx) / current_scale;
         d.fy = sy + (d3.event.y - sy) / current_scale;
         //d.fx = Math.max(100, Math.min(width, d3.event.x));
@@ -229,6 +231,10 @@ class BarChart extends React.Component {
           <Header.Content>
 						Poverty headcount ratio at $1.90 a day (2011 PPP)
           </Header.Content>
+    <Header.Subheader style={{color: "#cccccc", fontSize: "10px"}}>
+      Data source: World Bank<sup><a href="https://data.worldbank.org/indicator/SI.POV.DDAY">[1]</a>
+      <a href="https://data.worldbank.org/indicator/SI.POV.DDAY">[2]</a></sup>
+    </Header.Subheader>
         </Header>
 
         <div id={"my_dataviz"} />

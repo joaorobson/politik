@@ -41,7 +41,7 @@ const FixedMenuLayout = () => (
               fontSize: "16px"
             }}
             as="a"
-            href="/"
+            href="/projects"
           >
             Projects
           </List.Item>
