@@ -25,9 +25,9 @@ const FixedMenuLayout = () => (
           as="h1"
         >
           <Header.Content>
-            Politik
+            FortyTwo 
             <Header.Subheader style={{ fontSize: "14px" }}>
-              Data Science applied to open data.
+              A blog about Data Visualization and Machine Learning
             </Header.Subheader>
           </Header.Content>
         </Header>
